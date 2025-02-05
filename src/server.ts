@@ -10,10 +10,12 @@ const app = express();
 
 app.get("/", (req, res) => {
   res.json({ result: "ok" });
+  console.log("Server is get OK");
 });
 
 app.get("/login", (req: TypedRequestQuery<User>, res: Response) => {
   res.json(req.query);
+  console.log("Server is login OK");
 });
 
 app.listen(3000, () => console.log("Server is running..."));
